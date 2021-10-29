@@ -1,7 +1,7 @@
-export default function webAudio(document, audioStream) {
+export default function webAudio(mediaStream) {
 	const audioCtx = new AudioContext();
 
-	const audio = audioCtx.createMediaStreamSource(audioStream);
+	const audio = audioCtx.createMediaStreamSource(mediaStream);
 
 	const analyser = audioCtx.createAnalyser();
 	analyser.fftSize = 64;

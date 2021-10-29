@@ -17,6 +17,7 @@
 		"webpack-glsl-loader": "^1.0.1"
 	},
 	"dependencies": {
+		"@mediapipe/camera_utils": "^0.3.1632432234",
 		"glsl-canvas-js": "^0.2.6"
 	}
 }

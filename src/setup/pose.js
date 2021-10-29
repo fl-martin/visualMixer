@@ -1,9 +1,11 @@
-export default function poseSetup(size) {
-	const videoElement = document.createElement("video");
-	videoElement.id = "camera";
-	videoElement.width = size.width;
-	videoElement.height = size.height;
-	//document.body.appendChild(videoElement);
+import { Camera } from "@mediapipe/camera_utils";
+
+export default function poseSetup(size, media) {
+	const cameraInput = document.createElement("video");
+	cameraInput.id = "camera";
+	cameraInput.width = size.width;
+	cameraInput.height = size.height;
+	//document.body.appendChild(cameraInput);
 
 	const poseSegmentation = document.createElement("canvas");
 	poseSegmentation.id = "pose-canvas";
@@ -60,18 +62,18 @@ export default function poseSetup(size) {
 
 	pose.onResults(onResults);
 
-	//VIDEO PAUSED BY DEFAULT
-	const camera = new Camera(videoElement, {
+	const camera = new Camera(cameraInput, {
 		onFrame: async () => {
-			await pose.send({ image: videoElement });
+			await pose.send({ image: cameraInput });
 		},
 		width: size.width / 2,
 		height: size.height / 2,
 	});
+	console.log(camera);
 	camera.start();
 
 	function playPause() {
-		videoElement.paused ? videoElement.play() : videoElement.pause();
+		cameraInput.paused ? cameraInput.play() : cameraInput.pause();
 	}
 
 	return { poseSegmentation, playPause };

@@ -1,4 +1,4 @@
-import getAudio from "./utils/getAudio";
+import getMedia from "./utils/getMedia";
 import hydraSetup from "./setup/hydra";
 import poseSetup from "./setup/pose";
 import registerWebMIDI from "./utils/registerWebMIDI";
@@ -11,11 +11,10 @@ import ShadersFrags from "./program-control/ShadersFrags";
 const size = { width: 1280, height: 720 };
 
 (async function startProgram() {
-	let audioStream;
-	await getAudio().then((media) => (audioStream = media));
+	const media = await getMedia(size);
 
 	const pose = poseSetup(size);
-	const audio = webAudio(document, audioStream);
+	const audio = webAudio(media);
 	const shader = shaderSetup(size);
 	const midi = registerWebMIDI();
 	hydraSetup(document, pose.poseSegmentation, shader.canvas, size);
@@ -32,7 +31,7 @@ const size = { width: 1280, height: 720 };
 	);
 })();
 
-//poder elegir camara
+//poder no append child shader canvas
 
 //forma de detener proceso
 
