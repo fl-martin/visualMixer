@@ -17,10 +17,19 @@ const size = { width: 1280, height: 720 };
 	const audio = webAudio(media);
 	const shader = shaderSetup(size);
 	const midi = registerWebMIDI();
-	hydraSetup(document, pose.poseSegmentation, shader.canvas, size);
+	const hydra = hydraSetup(
+		document,
+		pose.poseSegmentation,
+		shader.canvas,
+		size
+	);
 
-	const hydraController = new HydraSketches(midi.cc, audio.dataArray);
-	const shaderController = new ShadersFrags(shader.load, shader.playPause);
+	const hydraController = new HydraSketches(
+		midi.cc,
+		audio.dataArray,
+		hydra.hideShow
+	);
+	const shaderController = new ShadersFrags(shader);
 
 	setListeners(
 		document,
@@ -36,8 +45,6 @@ const size = { width: 1280, height: 720 };
 //forma de detener proceso
 
 //normalizar valores audio data
-
-//togle display visibility
 
 //cambiar uniforms al shader sin error
 

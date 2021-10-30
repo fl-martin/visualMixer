@@ -69,7 +69,6 @@ export default function poseSetup(size, media) {
 		width: size.width / 2,
 		height: size.height / 2,
 	});
-	console.log(camera);
 	camera.start();
 
 	function playPause() {

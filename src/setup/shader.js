@@ -1,10 +1,12 @@
 import { Canvas } from "glsl-canvas-js";
+import toogleVisibility from "../utils/toogleVisibility";
 
 export default function shaderSetup(size) {
 	const canvas = document.createElement("canvas");
 	canvas.width = size.width;
 	canvas.height = size.height;
 	canvas.id = "shadercanvas";
+	canvas.style.visibility = "hidden";
 	document.body.appendChild(canvas);
 	const options = {
 		alpha: false,
@@ -16,6 +18,7 @@ export default function shaderSetup(size) {
 
 	const load = (program) => glsl.load(program);
 	const playPause = () => glsl.toggle();
+	const hideShow = () => toogleVisibility(canvas);
 
-	return { canvas, load, playPause };
+	return { canvas, load, playPause, hideShow };
 }

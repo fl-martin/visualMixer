@@ -1,3 +1,5 @@
+import toogleVisibility from "../utils/toogleVisibility";
+
 export default function hydraSetup(document, cameraStream, shaderCanvas, size) {
 	const c = document.createElement("canvas");
 	c.id = "hydracanvas";
@@ -12,5 +14,7 @@ export default function hydraSetup(document, cameraStream, shaderCanvas, size) {
 
 	fps = 30;
 
-	return;
+	const hideShow = () => toogleVisibility(c);
+
+	return { hideShow };
 }
