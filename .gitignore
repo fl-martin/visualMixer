@@ -1,5 +1,5 @@
 node_modules/
 dist
 .DS_Store
-src/hands-functions
+src/pose-on-results/handsValues
 src/sketch.js

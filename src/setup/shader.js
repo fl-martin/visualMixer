@@ -6,7 +6,6 @@ export default function shaderSetup(size) {
 	canvas.width = size.width;
 	canvas.height = size.height;
 	canvas.id = "shadercanvas";
-	canvas.style.visibility = "hidden";
 	document.body.appendChild(canvas);
 	const options = {
 		alpha: false,

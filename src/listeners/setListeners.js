@@ -17,3 +17,5 @@ export default function setListeners(
 			: shader.runFrag(e.key);
 	});
 }
+
+//separar entre letras para un program control y otro

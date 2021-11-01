@@ -75,5 +75,9 @@ export default function poseSetup(size, media) {
 		cameraInput.paused ? cameraInput.play() : cameraInput.pause();
 	}
 
-	return { poseSegmentation, playPause };
+	const runProgram = (func) => pose.onResults(func);
+
+	return { poseSegmentation, playPause, runProgram };
 }
+
+//hacer lo mismo que con las otras librerias, carpeta con programas que se corren onResults, program-control que determine cual se ejecuta
