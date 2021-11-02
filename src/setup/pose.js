@@ -1,6 +1,6 @@
 import { Camera } from "@mediapipe/camera_utils";
 
-export default function poseSetup(size, media) {
+export default function poseSetup(document, size, media) {
 	const cameraInput = document.createElement("video");
 	cameraInput.id = "camera";
 	cameraInput.width = size.width;
@@ -71,13 +71,10 @@ export default function poseSetup(size, media) {
 	});
 	camera.start();
 
-	function playPause() {
-		cameraInput.paused ? cameraInput.play() : cameraInput.pause();
-	}
-
 	const runProgram = (func) => pose.onResults(func);
+	const playPause = () => {
+		cameraInput.paused ? cameraInput.play() : cameraInput.pause();
+	};
 
-	return { poseSegmentation, playPause, runProgram };
+	return { poseSegmentation, runProgram, playPause };
 }
-
-//hacer lo mismo que con las otras librerias, carpeta con programas que se corren onResults, program-control que determine cual se ejecuta

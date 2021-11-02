@@ -7,15 +7,16 @@ import webAudio from "./setup/webAudio";
 import HydraSketches from "./program-control/HydraSketches";
 import setListeners from "./listeners/setListeners";
 import ShadersFrags from "./program-control/ShadersFrags";
+import PoseOnResults from "./program-control/PoseOnResults";
 
 const size = { width: 1280, height: 720 };
 
 (async function startProgram() {
 	const media = await getMedia(size);
 
-	const pose = poseSetup(size);
+	const pose = poseSetup(document, size);
 	const audio = webAudio(media);
-	const shader = shaderSetup(size);
+	const shader = shaderSetup(document, size, audio.dataArray);
 	const midi = registerWebMIDI();
 	const hydra = hydraSetup(
 		document,
@@ -31,12 +32,15 @@ const size = { width: 1280, height: 720 };
 	);
 	const shaderController = new ShadersFrags(shader);
 
+	const poseController = new PoseOnResults(pose);
+	console.log(poseController);
+
 	setListeners(
 		document,
 		audio,
 		hydraController,
 		shaderController,
-		pose.playPause
+		poseController
 	);
 })();
 
@@ -45,7 +49,5 @@ const size = { width: 1280, height: 720 };
 //forma de detener proceso
 
 //normalizar valores audio data
-
-//cambiar uniforms al shader sin error
 
 //manejo error si no hay audio

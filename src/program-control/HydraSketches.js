@@ -14,6 +14,7 @@ export default class HydraSketches {
 
 	runSketch(program) {
 		if (!this.sketches[program]) return;
+
 		this.sketches[program]();
 	}
 }

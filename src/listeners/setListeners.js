@@ -1,16 +1,10 @@
-export default function setListeners(
-	document,
-	audio,
-	sketches,
-	shader,
-	playPauseCam
-) {
+export default function setListeners(document, audio, sketches, shader, pose) {
 	document.getElementById("hydracanvas").addEventListener("click", () => {
 		//audio.start();
 	});
 
 	document.addEventListener("keydown", (e) => {
-		if (e.key == "c") playPauseCam();
+		if (e.key == "c") pose.runProgram(e.key);
 
 		/^[0-9]$/i.test(e.key)
 			? sketches.runSketch(e.key)
