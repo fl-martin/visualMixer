@@ -7,14 +7,14 @@ export default function webAudio(mediaStream) {
 	const filterNode = audioCtx.createBiquadFilter();
 
 	const analyser = audioCtx.createAnalyser();
-	analyser.fftSize = 64;
+	analyser.fftSize = 512;
 	analyser.smoothingTimeConstant = 0.9;
+	audio.connect(analyser);
 
 	audio.connect(gainNode);
-	gainNode.connect(analyser);
 	gainNode.value = 1;
-	//filterNode.connect(analyser);
-	//analyser.connect(audioCtx.destination);
+	gainNode.connect(filterNode);
+	//filterNode.connect(audioCtx.destination);
 
 	const dataArray = new Uint8Array(analyser.frequencyBinCount);
 

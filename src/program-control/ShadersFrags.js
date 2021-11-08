@@ -1,6 +1,7 @@
 import exploration1 from "../frag-shaders/exploration1.glsl";
 import pointsTunnel from "../frag-shaders/pointsTunnel.glsl";
 import lygia1 from "../frag-shaders/lygia1.glsl";
+import waves1 from "../frag-shaders/waves1.glsl";
 
 export default class ShadersFrags {
 	constructor(shader) {
@@ -8,6 +9,7 @@ export default class ShadersFrags {
 			q: exploration1,
 			w: lygia1,
 			e: pointsTunnel,
+			r: waves1,
 			p: () => shader.playPause(),
 			o: () => shader.hideShow(),
 		};

@@ -9,6 +9,7 @@ uniform float   u_time;
 #include "lygia/space/ratio.glsl"
 #include "lygia/draw/cross.glsl"
 #include "lygia/draw/circle.glsl"
+#include "lygia/draw/rect.glsl"
 
 void main(void) {
     vec3 color = vec3(0.0);

@@ -8,6 +8,7 @@ import HydraSketches from "./program-control/HydraSketches";
 import setListeners from "./listeners/setListeners";
 import ShadersFrags from "./program-control/ShadersFrags";
 import PoseOnResults from "./program-control/PoseOnResults";
+import tapTempo from "./utils/tapTempo";
 
 const size = { width: 1280, height: 720 };
 
@@ -16,8 +17,9 @@ const size = { width: 1280, height: 720 };
 
 	const pose = poseSetup(document, size);
 	const audio = webAudio(media);
-	const shader = shaderSetup(document, size, audio.dataArray);
 	const midi = registerWebMIDI();
+	const tempo = tapTempo();
+	const shader = shaderSetup(document, size, audio.dataArray, tempo);
 	const hydra = hydraSetup(
 		document,
 		pose.poseSegmentation,
@@ -33,18 +35,18 @@ const size = { width: 1280, height: 720 };
 	const shaderController = new ShadersFrags(shader);
 
 	const poseController = new PoseOnResults(pose);
-	console.log(poseController);
 
 	setListeners(
 		document,
 		audio,
+		tempo.tap,
 		hydraController,
 		shaderController,
 		poseController
 	);
 })();
 
-//poder no append child shader canvas
+//cambiar nombre tempo
 
 //forma de detener proceso
 

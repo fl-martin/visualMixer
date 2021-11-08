@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"@mediapipe/camera_utils": "^0.3.1632432234",
-		"glsl-canvas-js": "^0.2.6"
+		"glsl-canvas-js": "^0.2.6",
+		"tap-tempo": "^0.1.1"
 	}
 }

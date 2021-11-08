@@ -58,6 +58,7 @@ export default function poseSetup(document, size, media) {
 		smoothSegmentation: true,
 		minDetectionConfidence: 0.7,
 		minTrackingConfidence: 0.6,
+		selfieMode: true,
 	});
 
 	pose.onResults(onResults);
