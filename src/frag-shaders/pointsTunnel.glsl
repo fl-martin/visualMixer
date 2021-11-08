@@ -41,6 +41,8 @@ void main() {
      color = square - vec3(pct.g,0.,0.) + vec3(pct.r,0.,0.);
 
 
+//abs(sin(u_time * PI * (u_bpm / 60.)))
+
     // Plot transition lines for each channel
     //color = mix(color,vec3(1.0,0.0,0.0),plot(st,pct.r));
     //color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
