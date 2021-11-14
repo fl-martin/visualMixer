@@ -33,7 +33,6 @@ const size = { width: 1280, height: 720 };
 		hydra.hideShow
 	);
 	const shaderController = new ShadersFrags(shader);
-
 	const poseController = new PoseOnResults(pose);
 
 	setListeners(
@@ -46,10 +45,8 @@ const size = { width: 1280, height: 720 };
 	);
 })();
 
-//cambiar nombre tempo
-
 //forma de detener proceso
 
 //normalizar valores audio data
 
-//manejo error si no hay audio
+//manejo error si no hay audio/video
