@@ -1,0 +1,20 @@
+body {
+	margin: 0;
+	background-color: #000;
+	overflow: hidden;
+}
+
+#pose-canvas {
+	position: absolute;
+	z-index: -1;
+}
+
+#hydracanvas {
+	position: absolute;
+	z-index: 2;
+}
+
+#shadercanvas {
+	position: absolute;
+	z-index: 1;
+}
