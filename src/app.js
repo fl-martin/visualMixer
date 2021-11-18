@@ -10,7 +10,7 @@ import ShadersFrags from "./program-control/ShadersFrags";
 import PoseOnResults from "./program-control/PoseOnResults";
 import tapTempo from "./utils/tapTempo";
 
-const size = { width: 1280, height: 720 };
+const size = { width: 1280, height: 1024 };
 
 (async function startProgram() {
 	const media = await getMedia(size);

@@ -12,7 +12,7 @@ export default function hydraSetup(document, cameraStream, shaderCanvas, size) {
 	s0.init({ src: cameraStream });
 	s1.init({ src: shaderCanvas });
 
-	fps = 30;
+	fps = 60;
 
 	const hideShow = () => toogleVisibility(c);
 

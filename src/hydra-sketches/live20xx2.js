@@ -13,6 +13,6 @@ export default function live20xx2(cc, audioStream) {
 		)
 		.blend(o0, () => cc[10] - 0.1)
 		.scale(1.001)
-		.layer(src(s0).luma(() => cc[7] + 0.1))
+		.layer(src(s1).luma(() => cc[7] + 0.1))
 		.out();
 }

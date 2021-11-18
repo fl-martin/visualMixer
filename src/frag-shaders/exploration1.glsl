@@ -5,7 +5,7 @@
     uniform vec2 u_resolution;
     uniform vec2 u_mouse;
     uniform float u_time;
-    uniform float lowFreq;
+    uniform float u_low;
     
     vec2 uvN(){
         vec2 pos = gl_FragCoord.xy/u_resolution;
