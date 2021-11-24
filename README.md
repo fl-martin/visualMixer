@@ -1,6 +1,6 @@
 # visualMixer
 
-A place where you can mix Hydra patters, shaders and the pose segmentation provided by Mediapipe. This last also provides landmarks detection that can be used as data to manipulate visuals.
+A place where you can mix shaders, Hydra patterns and the pose segmentation provided by Mediapipe. This last also provides landmarks detection that can be used as data to manipulate visuals.
 
 ## This project uses
 - [glsl-canvas](https://github.com/actarian/glsl-canvas)
