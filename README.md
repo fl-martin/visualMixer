@@ -21,3 +21,5 @@ https://user-images.githubusercontent.com/72820337/143278967-b4968d2a-655f-4886-
 
 ## Gif Demos
 
+![priri](https://user-images.githubusercontent.com/72820337/143279704-26c49aa0-5e99-41d9-8178-1ce59dd5e0d6.gif)
+![clipi](https://user-images.githubusercontent.com/72820337/143280599-208ab910-6b47-4552-a966-cfac9c63d0e8.gif)
